@@ -6,7 +6,10 @@
 
 from typing import List
 
-def load_input(day: int) -> List[str]:
+def load_input(day: int, as_single_string: int=False) -> List[str]:
     with open(f'./input/day_{day:02}.txt') as f:
-        data = f.read().splitlines()
+        if as_single_string:
+            data = f.read()
+        else:
+            data = f.read().splitlines()
     return data
